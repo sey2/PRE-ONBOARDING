@@ -31,6 +31,16 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
+fun MyApp(modifier: Modifier = Modifier) {
+    Surface(
+        modifier = modifier,
+        color = MaterialTheme.colorScheme.background
+    ) {
+        Greeting(name = "MyApp Composable")
+    }
+}
+
+@Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
         text = "Hello $name!",
@@ -43,5 +53,13 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 fun GreetingPreview() {
     Pre_onboardingTheme {
         Greeting("Start Compose Exam")
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun MyAppPreview() {
+    Pre_onboardingTheme {
+        MyApp()
     }
 }
